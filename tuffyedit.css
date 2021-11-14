@@ -1,0 +1,241 @@
+/* tuffy edit */
+
+/*Loading Screen*/
+#initLoader {
+    background-color: var(--aesthetics);
+}
+
+/*
+#loadHeader {
+    content: linear-gradient(transparent, transparent);
+    background-color: var(--accent);
+    -webkit-mask-image: url(https://media.discordapp.net/attachments/881541930675240980/887518727942328341/masu.png);
+	-webkit-mask-size: contain;
+    -webkit-mask-position: center top;
+    height: 237px;
+    width: 362px;
+}
+*/
+
+#loadInfoRHolder {
+    color: #fff;
+    font-size: 0;
+    background-color: var(--aesthetics);
+    padding: 4px 8px;
+    box-shadow: 4px 4px var(--accent);
+}
+
+#loadInfoRHolder::after {
+	color: #fff;
+    content: "Edit by: tuffyzaza";
+    font-size: 20px;
+}
+
+#loadTipsHolder {
+    color: #fff;
+    font-size: 0;
+}
+
+#loadTipsHolder::before {
+	color: #fff;
+    content: "CSS by Envy";
+    display: block;
+    font-size: 24px;
+}
+
+#loadTipsHolder::after {
+    content: "twitter: @envyxyz7 ・ discord: Envy#9335";
+    font-size: 24px;
+}
+
+.lC-cube {
+    display: none;
+}
+
+#lC-cont::after {
+    content: " ";
+	display: block;
+	border-radius: 50%;
+	width: 0;
+	height: 0;
+	margin: 8px;
+	box-sizing: border-box;
+	border: 32px solid #fff;
+	border-color: #dc143c transparent #dc143c transparent;
+	animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+/*chat*/
+#chatList[style*="max-height"]{
+    max-height: 250px!important;
+    border-radius: 0!important
+}
+
+.chatMsg {
+	/* chat msg */
+    color: #fff;
+}
+
+.chatMsg [style*="#9eeb56"]{
+    /* player name */
+    color: var(--accent) !important; 
+}
+
+.chatItem[style] {
+	color: #fff !important;
+	font-size: 18px;
+	width: -webkit-fill-available;
+	margin: 0;
+	background: rgba(0, 0, 0, 0.4)!important;
+	padding: 2px 5px 2px 10px;
+	border-radius: 0;
+}
+
+.chatMsg span {
+	/* you and enemy */
+	color: #fff !important;
+}
+
+/*health*/
+#healthValue{
+	color: var(--hp--ammo--color);
+    font-size: var(--hp-ammo-size)!important;
+    font-family: 'hpammo';
+    text-align: center;
+	width: 90px;
+}
+
+#healthValueHolder::before{
+	content: '';
+    display: block;
+    position: absolute;
+    color: var(--hp--ammo--color);
+    text-align: center;
+	width: 80px;
+	right: 6px;
+	bottom: 60px;
+	border-bottom: 5px solid;
+	line-height: 1.6;
+	font-size: 32px
+}
+
+/*ammo*/
+#ammoVal{
+	color: var(--hp--ammo--color);
+	font-size: var(--hp-ammo-size)!important;
+	font-family: 'hpammo';
+	text-align: center;
+	width: 60px;
+    transform: translateX(5px) translateY(10px)
+}
+
+#ammoDisplay{
+    background-color: transparent;
+    background-image: linear-gradient(crimson,crimson);
+	position: fixed;
+	right: calc(50% - 293px);
+	bottom: 25%!important;
+	height: auto!important;
+	width: 80px!important;
+    padding: 0!important;
+    margin: 0!important;
+    border-radius: 0;
+    height: 65px!important;
+    background-position-y: -60px
+}
+
+/*weap*/
+#weapDisplay {
+    bottom: 50px;
+    right: 47.5%;
+    transform: translateX(50%)
+}
+
+/* text */
+
+.rainbowText {
+    background-image: linear-gradient(to right, #2e62ff, #0099ff , #00ff00, #ffde3b, #ff3399, #6666ff);
+    animation: gradient-border 2s linear infinite;
+    background-size: 400% 100%;
+    color: transparent !important;
+    -webkit-background-clip: text;
+}
+
+#instructions > * > .lds-ring::before {
+    content:"LOADING...";
+    position:absolute;
+    top:0;
+    left:0;
+    color:var(--accent);
+    transform:translate(-50%,-75%);
+    font-size:32px; 
+    animation:legacyloader .8s infinite alternate;
+}
+
+#uiBase[style] #instructions > * > .lds-ring::before {
+    content:"CONNECTING...";
+}
+
+/*spectate*/
+.sliderSml::before {
+	content: "観客";
+	font-size: 25px;
+	color: rgb(255 255 255 / 0.7);
+	position: fixed;
+	width: 110px;
+	padding-left: 58px;
+	height: 150px;
+	background-color: transparent;
+	line-height: 150px;
+    bottom: 0;
+    right: 0;
+    left: unset;
+    border-radius: 0;
+    transition-duration: var(--duration);
+	text-shadow: 0px -1px 0px black,0px 1px 0px black,1px 0px 0px black,-1px 0px 0px black,1px 1px 0px black,-1px 1px 0px black,1px -1px 0px black,
+    -1px -1px 0px black!Important;
+}
+
+input:checked+.sliderSml::before {
+	content: "観客";
+	color: var(--accent);
+	transform: translateX(-1px);
+	text-shadow: 0px -1px 0px black,0px 1px 0px black,1px 0px 0px black,-1px 0px 0px black,1px 1px 0px black,-1px 1px 0px black,1px -1px 0px black,
+    -1px -1px 0px black!Important;
+}
+
+/*reload*/
+#reloadMsg {
+    bottom: calc(50% - 200px);
+    background-color: transparent !important;
+    border: none;
+    color: var(--accent);
+    font-family: 'Material Icons';
+    font-size: 0;
+    animation: breathe 1s infinite alternate;
+}
+
+#reloadMsg::before {
+    content: "report_problem";
+    font-size: 64px;
+}
+
+/*disable masu*/
+#instructions::after{
+	content: '';
+}
+ 
+
